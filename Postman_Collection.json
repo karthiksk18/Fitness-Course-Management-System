@@ -1,0 +1,250 @@
+{
+  "info": {
+    "name": "Spring Boot LMS API - Ready to Test",
+    "description": "Complete API collection with test data - Import and run in sequence",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create Instructor (Run First)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"instructorName\": \"Dr. John Smith\",\n  \"email\": \"john@example.com\",\n  \"specialization\": \"Computer Science\",\n  \"phoneNumber\": \"+1-234-567-8900\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/instructors",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "instructors"]
+        }
+      }
+    },
+    {
+      "name": "2. Create Course (Run Second)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"courseName\": \"Java Programming\",\n  \"description\": \"Learn Java from basics\",\n  \"duration\": 40,\n  \"price\": 99.99,\n  \"level\": \"Beginner\",\n  \"instructor\": {\n    \"instructorId\": 1\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/courses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "courses"]
+        }
+      }
+    },
+    {
+      "name": "3. Create Student (Run Third)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentName\": \"Alice Johnson\",\n  \"email\": \"alice@example.com\",\n  \"phoneNumber\": \"+1-555-0100\",\n  \"address\": \"123 Main St\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students"]
+        }
+      }
+    },
+    {
+      "name": "4. Create Module (Run Fourth)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"moduleName\": \"Introduction to Java\",\n  \"description\": \"Basic Java concepts\",\n  \"course\": {\n    \"courseId\": 1\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/modules",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "modules"]
+        }
+      }
+    },
+    {
+      "name": "5. Create Enrollment (Run Fifth)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"course\": {\n    \"courseId\": 1\n  },\n  \"student\": {\n    \"studentId\": 1\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/enrollments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "enrollments"]
+        }
+      }
+    },
+    {
+      "name": "Get All Instructors",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/instructors",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "instructors"]
+        }
+      }
+    },
+    {
+      "name": "Get All Courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/courses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "courses"]
+        }
+      }
+    },
+    {
+      "name": "Get All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students"]
+        }
+      }
+    },
+    {
+      "name": "Get All Modules",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/modules",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "modules"]
+        }
+      }
+    },
+    {
+      "name": "Get All Enrollments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/enrollments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "enrollments"]
+        }
+      }
+    },
+    {
+      "name": "Get Courses by Instructor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/courses/instructor/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "courses", "instructor", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Courses by Level",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/courses/level/Beginner",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "courses", "level", "Beginner"]
+        }
+      }
+    },
+    {
+      "name": "Get Student by Email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/email/alice@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "email", "alice@example.com"]
+        }
+      }
+    },
+    {
+      "name": "Get Instructors with Pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/instructors/page/0/5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "instructors", "page", "0", "5"]
+        }
+      }
+    }
+  ]
+}
